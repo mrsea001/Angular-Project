@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularCli-App';
+  title = 'Angular-Project';
   visible=true;
   counter=0;
   myFavLang = [
