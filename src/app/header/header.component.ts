@@ -8,11 +8,13 @@ import { UserService } from '../user.service';
 })
 export class HeaderComponent implements OnInit {
 
-  userName="Anoy";
-  constructor(private user:UserService) { }
+  userName="";
+  constructor(private user:UserService) {
+      this.userName=user.userName;
+   }
 
   ngOnInit() {
-    this.userName=this.user.userName;
+    //this.userName=this.user.userName;
   }
 
 }

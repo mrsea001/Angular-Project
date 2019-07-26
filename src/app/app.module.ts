@@ -12,22 +12,24 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { UserService } from './user.service';
 import { AuthguardGuard } from './authguard.guard';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes=[
   {
-    path:'dashboard',
-    canActivate:[AuthguardGuard],
-    component: DashboardComponent
+    path: '',
+    component: LoginComponent
   },
   {
-    path: '',
+    path: 'home',
     canActivate:[AuthguardGuard],
     component: HomeComponent
   },
   {
-    path: 'login',
-    component: LoginComponent
+    path:'dashboard',
+    canActivate:[AuthguardGuard],
+    component: DashboardComponent
   }
+  
 ]
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ const appRoutes: Routes=[
     DashboardComponent,
     HomeComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

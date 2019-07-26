@@ -15,7 +15,7 @@ export class AppComponent {
     {'name':'js','type':'forntend'},
     {'name':'.netcore','type':'backend'},
   ];
-  username="Mansoor";
+  
   constructor(){
 
   }

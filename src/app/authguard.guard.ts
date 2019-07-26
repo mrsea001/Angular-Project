@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { CanActivate, CanActivateChild, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { UserService } from './user.service';
 
@@ -8,12 +8,13 @@ import { UserService } from './user.service';
 })
 
 export class AuthguardGuard implements CanActivate, CanActivateChild, CanLoad {
-  constructor(private user:UserService){
+  constructor(private user:UserService, private router: Router){
   
   }
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
+    this.router.navigate[('/')];
     return this.user.getUserLoggedIn();
   }
   canActivateChild(
